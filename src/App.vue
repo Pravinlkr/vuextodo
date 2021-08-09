@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-    <div class="nav">
-      <p>To Do App Using Vuex</p>
-    </div>
-    <todo-input></todo-input>
-    <todo-list></todo-list>
+    <v-app>
+      <v-main>
+        <v-container>
+          <h2 class="mb-8">To Do App Using Vuex and Vuetify</h2>
+          <input-section></input-section>
+          <list-section></list-section>
+        </v-container>
+      </v-main>
+    </v-app>
   </div>
 </template>
 
 <script>
-import TodoInput from './components/todoInput.vue'
-import TodoList from './components/todoList.vue'
+import inputSection from './components/inputSection.vue'
+import listSection from './components/listSection.vue'
 
 export default {
   name: 'App',
   components: {
-    TodoInput,
-    TodoList
+    inputSection,
+    listSection
   }
 }
 </script>
