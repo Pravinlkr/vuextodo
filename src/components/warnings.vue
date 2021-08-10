@@ -23,10 +23,10 @@
 <script>
 import {mapActions} from 'vuex';
   export default {
-    data: () => ({
+    data() {
+      return{
         timeout:-1
-    }),
-    watch:{
+      }
     },
     computed:{
         alertMessage(){
