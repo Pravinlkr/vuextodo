@@ -12,7 +12,7 @@ const state = {
     
     
     const mutations = {
-        ADD_TASK:(state, payload)=>{
+        ADD_TASK(state, payload){
             if(payload.title.trim().length>0){
                 state.message = payload.title +" Added Successfully"
                 state.todoList.push(payload);
@@ -24,7 +24,7 @@ const state = {
                 state.showSnackbar = true;
             }  
         },
-        DELETE_TASK:(state, payload)=>{
+        DELETE_TASK(state, payload){
 
             state.message = state.todoList[payload].title + " deleted successfully"
             state.todoList.splice(payload,1);
@@ -40,7 +40,7 @@ const state = {
                 }
             }
         },
-        UPDATE_TASK:(state, payload)=>{
+        UPDATE_TASK(state, payload){
             if(payload.task.trim().length>0){
                 state.message = state.todoList[payload.index].title + " updated to "+ payload.task;
                 state.todoList[payload.index].title = payload.task;
@@ -51,26 +51,26 @@ const state = {
             }
             state.showSnackbar = true;
         },
-        CLOSE_SNACKBAR:(state)=>{
+        CLOSE_SNACKBAR(state){
             state.showSnackbar = false;
         }
     }
     
     
     const actions = {
-        addTask:(context,payload) => {
+        addTask(context,payload){
             context.commit('ADD_TASK',payload)
         },
-        deleteTask:(context,payload)=>{
+        deleteTask(context,payload){
             context.commit('DELETE_TASK',payload)
         },
-        closeSnackbar:(context)=>{
+        closeSnackbar(context){
             context.commit('CLOSE_SNACKBAR');
         },
-        toEdit:(context, payload)=>{
+        toEdit(context, payload){
             context.commit('TO_EDIT', payload);
         },
-        updateTask:(context, payload)=>{
+        updateTask(context, payload){
             context.commit('UPDATE_TASK',payload);
         }
     }

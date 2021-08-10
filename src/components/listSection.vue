@@ -53,9 +53,8 @@ import {mapActions} from 'vuex';
         }
     },
     methods:{
-        ...mapActions('todo',['deleteTask']),
-        ...mapActions('todo',['toEdit']),
-        ...mapActions('todo',['updateTask']),
+        ...mapActions('todo',['deleteTask','toEdit','updateTask']),
+ 
         editTask(index){
           this.toEdit(index);
           this.eTask = this.todoList[index].title;
